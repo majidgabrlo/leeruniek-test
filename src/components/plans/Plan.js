@@ -12,7 +12,8 @@ function Plans({ name, author }) {
     a.name > b.name ? 1 : b.name > a.name ? -1 : 0
   );
 
-  console.log(mainCategories);
+    
+
   return (
     <div className="ml-5">
       <div data-testid="plan-name">Name:{name}</div>

@@ -13,6 +13,10 @@ function Categories({ name, id, isArchived }) {
     a.dateCreated > b.dateCreated ? 1 : b.dateCreated > a.dateCreated ? -1 : 0
   );
 
+  subCategories.sort((a, b) =>
+  a.name > b.name ? 1 : b.name > a.name ? -1 : 0
+  );
+
   if (isArchived) {
     return null;
   }
