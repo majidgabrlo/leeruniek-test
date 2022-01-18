@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import Plans from "./components/plans/Plan";
+import data from "./defaultData";
 function App() {
+  const { PLAN } = data;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {Array.isArray(PLAN) ? (
+        PLAN.map((item) => (
+          <Plans key={item.id} name={item.name} author={item.userCreated} />
+        ))
+      ) : (
+        <Plans name={PLAN.name} author={PLAN.userCreated} />
+      )}
     </div>
   );
 }
